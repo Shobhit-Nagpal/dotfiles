@@ -1,0 +1,13 @@
+[user]
+	name = Shobhit-Nagpal
+	email = shobhitsnagpal@gmail.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[core]
+	autocrlf = false
+	longpaths = true
+	editor = nvim
+[pull]
+	rebase = false
