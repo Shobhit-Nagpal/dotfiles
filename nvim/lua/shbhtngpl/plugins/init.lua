@@ -3,10 +3,18 @@ return {
   'nvim-telescope/telescope.nvim',   
   'folke/tokyonight.nvim',   
   'sbdchd/neoformat',
-  'Shobhit-Nagpal/nvim-rafce',
+  {'Shobhit-Nagpal/nvim-rafce',
+  config = function()
+    require('rafce')
+  end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
   {
 	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
     dependencies = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},             -- Required
