@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias postman="/home/shbhtngpl/git-aur/postman-bin/pkg/postman-bin/opt/postman/Postman"
 #
 # some more ls aliases
 alias ll='ls -alF'
@@ -109,10 +110,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-alias rename="~/Desktop/personal/cli/rename/renameFile.js"
-alias copy="~/Desktop/personal/cli/copy/copyFile.js"
-alias lmfao="~/Desktop/personal/cli/lmfao/lmfao.js"
-alias ganache="~/Downloads/ganache-2.7.1-linux-x86_64.AppImage"
 alias tmux="tmux -u"
 
 export GOPATH=$HOME/go
@@ -120,18 +117,38 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/opt/nvim-linux64/bin
 
-. "$HOME/.cargo/env"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-alias postman="/home/shobhit/Downloads/Postman/app/Postman"
-alias xampp="sudo /opt/lampp/./manager-linux-x64.run"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 bindkey -v
+
+# opam configuration
+[[ ! -r /home/shbhtngpl/.opam/opam-init/init.zsh ]] || source /home/shbhtngpl/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Flutter
+export PATH="$PATH:$HOME/.flutter/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# React Native
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Turso
+export PATH="$PATH:/home/shbhtngpl/.turso"
+
+# pnpm
+export PNPM_HOME="/home/shbhtngpl/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
