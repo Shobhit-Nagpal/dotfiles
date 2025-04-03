@@ -37,3 +37,6 @@ vim.keymap.set("n", "<leader>ff", ":Neoformat<CR>")
 -- Comment
 vim.keymap.set("v", "<leader>c", ":'<,'>norm i//<CR>")
 vim.keymap.set("v", "<leader>u", ":'<,'>norm ^xx<CR><leader>ff")
+
+-- JS keymaps
+vim.keymap.set("n", "<leader>ue", ":Ue<CR>")
